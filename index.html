@@ -462,6 +462,25 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
+
+/* Chart interval controls: clear selected state and mobile-friendly scrolling */
+.intervals{display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:thin}
+.intervals button{flex:none;min-width:41px;padding:9px 10px;transition:background .15s,color .15s,box-shadow .15s}
+.intervals button[aria-pressed="true"],.intervals button.active{
+ background:var(--accent)!important;color:var(--panel)!important;box-shadow:0 2px 0 var(--border);
+ font-weight:800;
+}
+.intervals button:hover:not([aria-pressed="true"]){background:var(--accent-soft)}
+#chartIntervalStatus{color:var(--accent);font-weight:600}
+.chart-footer{flex-wrap:wrap}
+.chart-footer span{min-width:0}
+@media(max-width:650px){
+ .chart-controls{align-items:flex-start;flex-direction:column;gap:8px}
+ .intervals{max-width:100%;width:100%;padding-bottom:3px}
+ .intervals button{flex:1;min-width:38px;padding:10px 6px}
+ .chart-right-controls{width:100%;justify-content:space-between}
+ #chartIntervalStatus{width:100%;order:3}
+}
 </style>
   <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-ticker-tape.js"></script>
   <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-mini-chart.js"></script>
@@ -499,6 +518,12 @@ function symbolData(ticker, exchange) {let item=STOCKS.find(s=>s[0]===ticker);re
 function tvSymbol(symbol){return symbol.exchange ? `${symbol.exchange}:${symbol.ticker}`:symbol.ticker;}
 let watchlist;try {const w=JSON.parse(loadLocal(LS.watch,'null'));watchlist=Array.isArray(w)?[...new Set(w.map(safeTicker).filter(Boolean))].slice(0,40):['NVDA','AAPL','GOOGL','MSFT','TSLA','SPY'];}catch {watchlist=['NVDA','AAPL','GOOGL','MSFT','TSLA','SPY'];}
 let selected=symbolData('NVDA');
+const CHART_INTERVALS = Object.freeze({
+  '1':'1-minute','5':'5-minute','15':'15-minute',
+  '60':'1-hour','1D':'1-day','1W':'1-week'
+});
+let activeInterval=loadLocal('tickdraft-candle-interval-v1','1D');
+if(!Object.hasOwn(CHART_INTERVALS,activeInterval))activeInterval='1D';
 let theme=loadLocal(LS.theme,'light')==='dark'?'dark':'light';
 let apiKey=loadLocal(LS.key,'');
 let quoteMap=new Map();
@@ -539,7 +564,35 @@ function renderSelectedQuote(){
     const cls=delta>0?'up':delta<0?'down':'';if(cls){price.classList.add(cls);change.classList.add(cls);} }
   else {price.textContent=apiKey?'Awaiting quote…':'Explore the chart';change.textContent=apiKey?'Provider price tiles refresh every 30 seconds':'Add personal data token for custom price tiles';}
 }
-function chooseTicker(ticker,exchange){ticker=safeTicker(ticker);if(!ticker)return;selected=symbolData(ticker,exchange);showNote();if($('orbitFocus'))$('orbitFocus').textContent=ticker;document.querySelectorAll('.orbit-node').forEach(node=>node.classList.toggle('selected',node.dataset.ticker===ticker));document.querySelectorAll('.quick-ticker').forEach(node=>node.classList.toggle('selected',node.dataset.ticker===ticker));let full=tvSymbol(selected);$('selectedTicker').textContent=ticker;$('selectedCompany').textContent=selected.company;$('selectedExchange').textContent=(selected.exchange||'AUTO')+' · U.S. SYMBOL';$('selectedEmblem').textContent=ticker[0];$('advancedChart').setAttribute('symbol',full);$('technicalAnalysis').setAttribute('symbol',full);renderSelectedQuote();renderWatch();closeSearch();closeNavigation();document.getElementById('workspace').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});let url=new URL(location.href);url.searchParams.set('ticker',ticker);if(selected.exchange)url.searchParams.set('exchange',selected.exchange);else url.searchParams.delete('exchange');history.replaceState(null,'',url);if(apiKey)fetchQuotes();}
+function renderAdvancedChart(){
+  // TradingView embeds can retain an older display after changing attributes in place.
+  // Replace the element to initialize a new chart with the selected resolution.
+  const previous=$('advancedChart');
+  if(!previous)return;
+  const chart=document.createElement('tv-advanced-chart');
+  chart.id='advancedChart';
+  chart.setAttribute('symbol',tvSymbol(selected));
+  chart.setAttribute('interval',activeInterval);
+  chart.setAttribute('theme',theme);
+  chart.setAttribute('timezone','America/New_York');
+  chart.setAttribute('aria-label',selected.ticker+' stock chart, '+CHART_INTERVALS[activeInterval]+' candles');
+  previous.replaceWith(chart);
+  document.querySelectorAll('.intervals button').forEach(button=>{
+    const active=button.dataset.interval===activeInterval;
+    button.classList.toggle('active',active);
+    button.setAttribute('aria-pressed',String(active));
+  });
+  const note=$('chartIntervalStatus');
+  if(note)note.textContent='Each candle = '+CHART_INTERVALS[activeInterval]+' of trading';
+}
+function changeChartInterval(interval){
+  if(!Object.hasOwn(CHART_INTERVALS,interval))return;
+  if(activeInterval===interval)return;
+  activeInterval=interval;
+  saveLocal('tickdraft-candle-interval-v1',interval);
+  renderAdvancedChart();
+}
+function chooseTicker(ticker,exchange){ticker=safeTicker(ticker);if(!ticker)return;selected=symbolData(ticker,exchange);showNote();if($('orbitFocus'))$('orbitFocus').textContent=ticker;document.querySelectorAll('.orbit-node').forEach(node=>node.classList.toggle('selected',node.dataset.ticker===ticker));document.querySelectorAll('.quick-ticker').forEach(node=>node.classList.toggle('selected',node.dataset.ticker===ticker));let full=tvSymbol(selected);$('selectedTicker').textContent=ticker;$('selectedCompany').textContent=selected.company;$('selectedExchange').textContent=(selected.exchange||'AUTO')+' · U.S. SYMBOL';$('selectedEmblem').textContent=ticker[0];renderAdvancedChart();$('technicalAnalysis').setAttribute('symbol',full);renderSelectedQuote();renderWatch();closeSearch();closeNavigation();document.getElementById('workspace').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});let url=new URL(location.href);url.searchParams.set('ticker',ticker);if(selected.exchange)url.searchParams.set('exchange',selected.exchange);else url.searchParams.delete('exchange');history.replaceState(null,'',url);if(apiKey)fetchQuotes();}
 function updateClock(){const now=new Date();$('nyClock').textContent='NEW YORK · '+new Intl.DateTimeFormat('en-US',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'America/New_York'}).format(now)+' ET';}
 function listSearchResults(){const query=safeTicker($('stockSearch').value);const matching=STOCKS.filter(s=>!query||s[0].includes(query)||s[1].toUpperCase().includes(query)).slice(0,9);searchItems=matching;$('searchResults').replaceChildren();
   if(query&&!matching.some(s=>s[0]===query)) {searchItems.unshift([query,`Search ${query} as a custom ticker`,$('exchangeSelect').value]);}
@@ -576,7 +629,7 @@ function showNote(){const field=$('tickerNote');if(!field)return;field.value=get
 function persistNote(){const text=$('tickerNote').value,notes=getNotes();if(text.trim())notes[selected.ticker]=text;else delete notes[selected.ticker];saveLocal(NOTE_STORAGE,JSON.stringify(notes));$('noteSaved').textContent='Saved locally ✓';}
 
 function bind(){
-  setTheme(theme);updateClock();setInterval(updateClock,30_000);renderWatch();renderSelectedQuote();initMovers();updateProviderStatus();
+  setTheme(theme);renderAdvancedChart();updateClock();setInterval(updateClock,30_000);renderWatch();renderSelectedQuote();initMovers();updateProviderStatus();
   $('tickerNote').addEventListener('input',persistNote);
   showNote();
   $('themeToggle').addEventListener('click',()=>setTheme(theme==='dark'?'light':'dark'));
@@ -595,7 +648,7 @@ function bind(){
   });
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeSearch();closeSettings();closeNavigation();}else if(e.key==='/'&&!e.ctrlKey&&!e.metaKey&&!['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)){e.preventDefault();openSearch();}});
   $('favoriteSelected').addEventListener('click',()=>watchlist.includes(selected.ticker)?removeWatch(selected.ticker):addWatch(selected.ticker));
-  document.querySelectorAll('.intervals button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.intervals button').forEach(b=>b.classList.toggle('active',b===btn));$('advancedChart').setAttribute('interval',btn.dataset.interval);}));
+  document.querySelectorAll('.intervals button').forEach(btn=>btn.addEventListener('click',()=>changeChartInterval(btn.dataset.interval)));
   document.querySelectorAll('.benchmark-card').forEach(btn=>btn.addEventListener('click',()=>chooseTicker(btn.dataset.ticker)));
   document.querySelectorAll('.quick-ticker,.paper-tickers button').forEach(btn=>btn.addEventListener('click',()=>chooseTicker(btn.dataset.ticker)));
   $('openExternalChart').addEventListener('click',()=>window.open(`https://www.tradingview.com/chart/?symbol=${encodeURIComponent(tvSymbol(selected))}`,'_blank','noopener,noreferrer'));
@@ -730,9 +783,15 @@ document.addEventListener('DOMContentLoaded',bind);
           <div class="workspace-grid">
             <div class="chart-panel panel">
               <div class="chart-topline"><div class="symbol-heading"><div class="symbol-emblem" id="selectedEmblem">N</div><div><span class="selected-company" id="selectedCompany">NVIDIA Corporation</span><div class="symbol-line"><strong id="selectedTicker">NVDA</strong><span class="selected-exchange" id="selectedExchange">NASDAQ · EQUITY</span></div></div></div><div class="quote-area"><div id="selectedPrice" class="quote-price">Explore the chart</div><div id="selectedChange" class="quote-change">Connect a data feed for custom price tiles</div></div></div>
-              <div class="chart-controls"><div class="intervals" aria-label="Chart interval"><button type="button" data-interval="1" >1m</button><button type="button" data-interval="5">5m</button><button type="button" data-interval="15">15m</button><button type="button" data-interval="60">1h</button><button type="button" data-interval="1D" class="active">1D</button><button type="button" data-interval="1W">1W</button></div><div class="chart-right-controls"><span class="data-chip" id="chartDataChip">CHART: DELAY POSSIBLE</span><button class="star-button" id="favoriteSelected" aria-label="Add to watchlist" title="Save to watchlist"><svg class="icon"><use href="#ic-star"/></svg></button></div></div>
+              <div class="chart-controls"><div class="intervals" role="group" aria-label="Candlestick intervals">
+                <button type="button" data-interval="1" aria-pressed="false" title="Each candle represents 1 minute">1m</button>
+                <button type="button" data-interval="5" aria-pressed="false" title="Each candle represents 5 minutes">5m</button>
+                <button type="button" data-interval="15" aria-pressed="false" title="Each candle represents 15 minutes">15m</button>
+                <button type="button" data-interval="60" aria-pressed="false" title="Each candle represents 1 hour">1h</button>
+                <button type="button" data-interval="1D" class="active" aria-pressed="true" title="Each candle represents 1 trading day">1D</button>
+                <button type="button" data-interval="1W" aria-pressed="false" title="Each candle represents 1 trading week">1W</button></div><div class="chart-right-controls"><span class="data-chip" id="chartDataChip">CHART: DELAY POSSIBLE</span><button class="star-button" id="favoriteSelected" aria-label="Add to watchlist" title="Save to watchlist"><svg class="icon"><use href="#ic-star"/></svg></button></div></div>
               <div class="full-chart"><tv-advanced-chart id="advancedChart" symbol="NASDAQ:NVDA" interval="1D" theme="dark" timezone="America/New_York"></tv-advanced-chart></div>
-              <div class="chart-footer"><span><span class="tiny-pulse"></span> Interactive chart · TradingView</span><span>Available data and delay vary by exchange</span></div>
+              <div class="chart-footer"><span><span class="tiny-pulse"></span> Interactive chart · TradingView</span><span id="chartIntervalStatus" role="status" aria-live="polite">Each candle = 1-day of trading</span><span>Market data may be delayed</span></div>
             </div>
             <aside class="radar-panel panel" aria-labelledby="radarTitle">
               <div class="panel-heading"><div><span class="panel-kicker">YOUR LITTLE WATCHLIST</span><h3 id="radarTitle">Saved stocks<span class="accent-dot">.</span></h3></div><span class="counter-badge" id="watchCount">0</span></div>
