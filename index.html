@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#080d16">
-  <meta name="description" content="PulseLayer — an independent market observatory. Interactive U.S. stock charts, constellations, sector maps, movers and a private watchlist.">
-  <title>PulseLayer — The Market Observatory</title>
-  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTYiIGZpbGw9IiMwYzEzMjAiLz48cGF0aCBkPSJNMTEgMzZoMTFsNy0xOCA5IDMwIDctMTVoOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjN2VmMmM2IiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPgo=" type="image/svg+xml">
+  <meta name="description" content="Tickdraft is an independent student-built stock market notebook with interactive U.S. stock charts, watchlists, a market heatmap, and personal research notes.">
+  <title>Tickdraft — Stocks, charts & your own notes</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2216%22%20fill%3D%22%23f7f5ee%22%2F%3E%3Cpath%20d%3D%22M14%2042%2026%2029l11%209%2014-22%22%20stroke%3D%22%2334866a%22%20stroke-width%3D%227%22%20fill%3D%22none%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2251%22%20cy%3D%2216%22%20r%3D%225%22%20fill%3D%22%23f28b6b%22%2F%3E%3C%2Fsvg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
 :root{color-scheme:dark;--bg:#080d16;--side:#0c121c;--panel:#0f1622;--panel2:#111a28;--panel3:#161f2c;--border:#243040;--border2:#1c2836;--text:#f0f3f7;--muted:#8b97a8;--faint:#5a697b;--accent:#86f0bd;--accent-soft:rgba(134,240,189,.13);--accent-dim:#3da987;--red:#ff817c;--positive:#4adaad;--gold:#e2c384;--top:#0c121b;--shadow:rgba(0,0,0,.32)}
 body[data-theme="light"]{color-scheme:light;--bg:#eef2f3;--side:#f8fafb;--panel:#fff;--panel2:#f5f8f9;--panel3:#e9eff1;--border:#d7dfe3;--border2:#e0e6e9;--text:#172433;--muted:#647385;--faint:#8795a2;--accent:#16996c;--accent-soft:rgba(23,158,108,.10);--accent-dim:#087758;--red:#d84e54;--positive:#15976d;--gold:#b3903e;--top:#fff;--shadow:rgba(19,44,66,.12)}
@@ -24,7 +24,7 @@ body[data-theme="light"]{color-scheme:light;--bg:#eef2f3;--side:#f8fafb;--panel:
 
 
 /* ============================================================================
-   PULSELAYER / MARKET OBSERVATORY 002
+   TICKDRAFT / STOCK MARKET NOTEBOOK 002
    A bespoke editorial-meets-orbital identity.
    Data visualizations are real TradingView embeds; decorative orbits are not quotes.
    ========================================================================== */
@@ -264,6 +264,204 @@ body{
 }
 @media(prefers-reduced-motion:reduce){.orbit-ring-one{animation:none}}
 
+
+/* TICKDRAFT / CUSTOM STUDENT-BUILT NOTEBOOK THEME — ONE HAND-CRAFTED PAGE */
+:root {
+ --bg:#f6f4ed;--side:#fffefa;--panel:#fffefa;--panel2:#f9f7f0;--panel3:#f0ebdf;
+ --border:#d9d5c9;--border2:#ebe7dc;--text:#202b29;--muted:#666f6b;
+ --faint:#8c938f;--accent:#277856;--accent-soft:#e9f1e7;--accent-dim:#37845e;
+ --red:#c75245;--positive:#25875e;--gold:#ef865d;--top:#fffefa;
+ --purple:#357e5c;--cream:#202b29;--shadow:rgba(54,59,45,.08);
+ --papercoral:#e97e5e;--paperink:#253632;--paperbg:#fffefa;
+}
+body[data-theme="dark"] {
+ --bg:#1c2624;--side:#202c29;--panel:#25322d;--panel2:#2a3933;--panel3:#33453c;
+ --border:#44544c;--border2:#39473f;--text:#f4f4e9;--muted:#bacabe;
+ --faint:#8da69a;--accent:#a3efb9;--accent-soft:#2c4339;--accent-dim:#75c49a;
+ --red:#fe9586;--positive:#a3efb9;--gold:#ffc2a1;--top:#1e2925;
+ --purple:#b1ecc7;--cream:#f3fff4;--shadow:rgba(0,0,0,.18);
+ --papercoral:#e28a72;--paperink:#23352f;--paperbg:#fdf8ec;
+}
+body{background:var(--bg);font-family:"DM Sans",sans-serif;color:var(--text);font-size:14px}
+body[data-theme="light"]{background:var(--bg)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(#a1a18d 0.7px,transparent .7px);background-size:15px 15px;opacity:.055}
+.app-shell{display:block}
+.sidebar{position:relative;top:auto;height:auto;width:100%;overflow:visible;display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:28px;padding:14px clamp(19px,4.5vw,88px);background:var(--side);border-bottom:1px solid var(--border);border-right:0;z-index:40}
+.brand{padding:0;display:flex;align-items:center;flex:none}
+.brand-mark{width:30px;height:34px;transform:rotate(-11deg);margin-right:3px;position:relative}
+.brand-mark span{width:5px;border-radius:2px;background:var(--accent)}
+.brand-mark span:nth-child(1){height:12px;transform:rotate(-35deg) translateY(6px)}
+.brand-mark span:nth-child(2){height:25px;background:var(--papercoral);transform:rotate(13deg)}
+.brand-mark span:nth-child(3){height:20px;transform:rotate(-25deg) translateY(-3px)}
+.brand-word{font-size:clamp(20px,2vw,27px);font-weight:800;letter-spacing:-1.4px;color:var(--text)}
+.brand-word>span{color:var(--accent)}
+.brand-word small{font:600 8px "IBM Plex Mono",monospace;letter-spacing:.9px;color:var(--muted);margin-top:5px}
+.brand-word small b{color:var(--papercoral)}
+.side-section-label,.sidebar-bottom,.side-watchlist,.side-add{display:none!important}
+.side-nav{display:flex;flex-direction:row;align-items:center;gap:4px;margin-left:auto}
+.nav-link{background:none!important;border:none;min-height:40px;border-radius:6px;padding:8px 14px;color:var(--muted);gap:8px;font-size:12px}
+.nav-link:hover,.nav-link.active{color:var(--accent)}
+.nav-link.active:before{content:"";position:absolute;top:auto;bottom:1px;left:14px;right:14px;width:auto;height:2px;background:var(--accent)}
+.nav-shortcut{display:none}
+.main-wrap{width:100%;min-width:0}
+.topbar{height:54px;padding:0 clamp(19px,4.5vw,88px);background:var(--panel2);border-bottom:1px solid var(--border2)}
+.pagecrumb{font-family:"IBM Plex Mono",monospace;letter-spacing:.6px;color:var(--accent);font-size:9px}
+.page-subcrumb,.crumb-div,.session-clock{color:var(--muted);font-size:9px}
+.topbar-left{gap:9px}
+.topbar-actions{gap:9px}
+.icon-button{border-radius:50%;height:34px;width:34px;background:var(--panel);border:1px solid var(--border)}
+.ticker-strip{background:var(--panel);border-bottom:1px solid var(--border);height:50px}
+.ticker-label{font-size:9px;letter-spacing:1.1px;color:var(--accent);background:var(--accent-soft);padding:0 17px}
+.main-content{padding:29px clamp(19px,4.5vw,88px) 65px;max-width:1650px}
+.hero.hero-v3{
+ min-height:480px;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
+ padding:0;border-radius:5px;border:1px solid var(--border);
+ background:var(--panel);overflow:hidden;position:relative;color:var(--text);
+ box-shadow:0 18px 50px -37px var(--shadow);
+}
+.hero.hero-v3:after{display:none}
+.hero.hero-v3>*{z-index:2;position:relative}
+.hero-left{min-width:0;padding:30px clamp(25px,4.5vw,75px) 22px;display:flex;flex-direction:column}
+.issue-line{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.9px;color:var(--muted);display:flex;align-items:center;gap:10px;font-weight:600}
+.issue-line>span:last-child{margin-left:auto;color:var(--faint);white-space:nowrap}
+.paper-dot{width:8px;height:8px;background:var(--papercoral);border-radius:50%;display:block;flex:none}
+.hero-copy{margin:auto 0;padding:28px 0}
+.eyebrow-hand{font:600 22px "Caveat",cursive;color:var(--papercoral);letter-spacing:.3px;margin-bottom:11px;transform:rotate(-1deg);transform-origin:left center}
+.hero.hero-v3 h1{font-family:"Space Grotesk","DM Sans",sans-serif;font-size:clamp(46px,4.35vw,79px);font-weight:700;line-height:1.05;letter-spacing:-.067em;margin:0 0 21px;max-width:780px;color:var(--text)}
+.hero.hero-v3 h1 em{font-style:normal;color:var(--accent);position:relative}
+.hero.hero-v3 h1 em:after{content:"";position:absolute;left:1%;right:2%;height:6px;bottom:-2px;background:var(--papercoral);opacity:.50;border-radius:40%;transform:rotate(-1deg)}
+.hero.hero-v3 p{max-width:450px;color:var(--muted);line-height:1.8;font-size:13px;margin:0}
+.hero-v3-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:27px}
+.hero.hero-v3 .btn-primary{background:var(--accent);color:#fff;padding:13px 19px;gap:9px;border:0;border-radius:5px;font:700 12px "DM Sans",sans-serif;box-shadow:4px 4px 0 var(--border)}
+.hero.hero-v3 .btn-primary:hover{background:var(--accent-dim);transform:translate(-1px,-1px)}
+.notebook-link{color:var(--accent);text-decoration:underline;text-decoration-color:var(--papercoral);text-underline-offset:5px;font-size:12px;font-weight:700}
+.hero-foot{border-top:1px dashed var(--border);padding-top:18px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:var(--faint);font:600 9px "IBM Plex Mono",monospace;letter-spacing:.5px}
+.hero-foot span:first-child{color:var(--accent)}
+.hero-right{background:#f0ecde;display:flex;align-items:center;justify-content:center;padding:30px 24px;min-height:480px;border-left:1px solid var(--border);isolation:isolate}
+.hero-right:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0,transparent 31px,rgba(91,103,96,.045) 32px),radial-gradient(circle at 80% 15%,rgba(234,124,90,.2),transparent 42%);z-index:-1}
+.paper-decoration{font:400 95px Georgia,serif;color:#e5aa81;position:absolute;top:2px;right:12px;transform:rotate(12deg);opacity:.52}
+.notebook-sheet{max-width:485px;width:92%;min-height:333px;padding:20px 26px 16px;background:var(--paperbg);color:var(--paperink);box-shadow:10px 13px 0 rgba(40,77,63,.09),0 15px 34px rgba(79,65,45,.14);transform:rotate(-3deg);border:1px solid #e1dcd0;display:flex;flex-direction:column}
+.notebook-top{display:flex;align-items:center;justify-content:space-between;gap:10px;font:700 9px "IBM Plex Mono",monospace;letter-spacing:1.2px;padding-bottom:10px;border-bottom:1px dashed #ccc8ba}
+.handstamp{font:600 24px "Caveat",cursive;color:#db7457;transform:rotate(8deg)}
+.notebook-graph{height:135px;position:relative;margin-top:17px;overflow:hidden}
+.notebook-graph svg{width:100%;height:100%}
+.chart-sticker{font:500 7px "IBM Plex Mono",monospace;color:#99978e;position:absolute;right:0;bottom:2px;background:var(--paperbg);padding:3px}
+.scrap-title{font:600 22px "Caveat",cursive;color:#336b55;padding:13px 0 8px}
+.paper-tickers{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.paper-tickers button{display:flex;align-items:center;gap:7px;text-align:left;border:1px dashed #dbd9c9;background:#f9f8ef;color:#34463c;padding:9px 10px;font:700 11px "IBM Plex Mono",monospace;transition:background .2s,transform .2s}
+.paper-tickers button:hover{background:#def5e3;transform:translateY(-2px);border-style:solid;border-color:#84ab94}
+.paper-tickers small{font-size:8px;color:#85918a;font-weight:500;margin-left:auto}
+.paper-bullet{width:7px;height:7px;border-radius:50%;background:#368566}
+.paper-bullet.coral{background:#df8065}
+.handwriting{text-align:right;color:#dc8061;font:600 21px "Caveat",cursive;margin-top:7px;transform:rotate(-2deg)}
+.sticky-note{position:absolute;bottom:28px;right:14px;padding:14px 20px;background:#ffde84;color:#4d462c;box-shadow:4px 7px 12px rgba(67,59,35,.16);font:700 23px/0.94 "Caveat",cursive;transform:rotate(8deg);z-index:4}
+.sticky-note span{color:#d1714a}
+.hero-byline{position:absolute;left:19px;bottom:17px;font:600 8px "IBM Plex Mono",monospace;color:#8a8d82;letter-spacing:1px}
+.quick-track.quick-track-v3{display:flex;align-items:stretch;margin:17px 0 6px;min-height:82px;border:1px solid var(--border);border-radius:5px;background:var(--panel);overflow:hidden}
+.quick-track-v3 .quick-track-title{min-width:164px;padding:15px 21px;background:var(--accent-soft)}
+.quick-track-v3 .quick-track-title span{color:var(--accent);font-size:10px}
+.quick-track-v3 .quick-track-title small{color:var(--muted)}
+.quick-track-v3 .quick-ticker{background:transparent;border-color:var(--border2);min-width:0;padding:14px 18px;color:var(--text);transition:background .18s}
+.quick-track-v3 .quick-ticker:hover,.quick-track-v3 .quick-ticker.selected{background:var(--accent-soft)}
+.quick-track-v3 .quick-ticker strong{font-size:17px;color:var(--text)}
+.quick-track-v3 .quick-ticker i{color:var(--muted)}
+.quick-track-v3 .quick-ticker b{color:var(--papercoral)}
+.section{margin-top:48px}
+.section-head{border-bottom:1px dashed var(--border);padding-bottom:16px}
+.section-kicker{color:var(--accent);font-size:9px;letter-spacing:1.3px}
+.section-head h2{font-size:clamp(25px,2.6vw,35px);font-family:"Space Grotesk",sans-serif;font-weight:700;letter-spacing:-1.4px}
+.section-head h2 .subtle{color:var(--papercoral);font-family:"Caveat",cursive;font-size:1.24em;font-weight:600;font-style:normal}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:5px;box-shadow:0 5px 23px -19px var(--shadow)}
+.benchmark-card{background:var(--panel);border-color:var(--border);border-radius:5px}
+.benchmark-card:hover{box-shadow:4px 5px 0 var(--accent-soft);border-color:var(--accent)}
+.bench-heading{color:var(--muted)}
+.chart-panel,.radar-panel,.heatmap-panel,.movers-panel,.analysis-panel,.screener-panel{border-top:1px solid var(--border)}
+.chart-panel{border-left:4px solid var(--accent)}
+.radar-panel{border-left:4px solid var(--papercoral);padding-bottom:18px}
+.heatmap-panel{border-left:4px solid var(--accent)}
+.movers-panel{border-left:4px solid var(--papercoral)}
+.analysis-panel{border-left:4px solid var(--accent)}
+.screener-panel{border-left:4px solid var(--papercoral)}
+.panel-kicker{color:var(--accent)}
+.panel-heading h3{font-family:"Space Grotesk",sans-serif}
+.selected-company,.selected-exchange,.radar-description{color:var(--muted)}
+.symbol-emblem{background:var(--accent-soft);border:1px solid var(--border);color:var(--accent);border-radius:5px}
+.chart-controls,.chart-footer{background:var(--panel2)}
+.intervals button.active{background:var(--accent-soft);color:var(--accent);border-radius:5px}
+.chart-footer{color:var(--muted)}
+.radar-row.current{background:var(--accent-soft);border-color:var(--border)}
+.radar-symbol{border-radius:5px;background:var(--panel3)}
+.counter-badge{background:var(--accent-soft);color:var(--accent)}
+.radar-add{border-radius:5px;background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.radar-tip{border-radius:5px;background:var(--panel2);border:1px dashed var(--border)}
+.note-workspace{margin-top:18px;border:1px solid var(--border);background:var(--panel2);padding:17px 15px;border-radius:4px}
+.note-workspace-heading{display:flex;justify-content:space-between;gap:5px;align-items:center;font:700 9px "IBM Plex Mono",monospace;color:var(--accent);letter-spacing:.7px}
+.note-workspace-heading small{font-size:7px;color:var(--faint)}
+.note-title{font:600 24px "Caveat",cursive;margin:14px 0 4px;color:var(--text)}
+.note-title strong{color:var(--papercoral)}
+.note-prompt{display:block;font-size:11px;line-height:1.4;color:var(--muted);margin-bottom:9px}
+#tickerNote{width:100%;resize:vertical;min-height:92px;max-height:260px;border:1px solid var(--border);background:var(--panel);border-radius:3px;padding:13px;color:var(--text);font:13px/1.65 "DM Sans",sans-serif}
+#tickerNote:focus{outline:2px solid var(--accent);outline-offset:1px}
+.note-status{display:flex;align-items:center;justify-content:space-between;margin-top:9px;color:var(--faint);font:500 9px "IBM Plex Mono",monospace}
+.note-status span:last-child{color:var(--papercoral);font:700 22px "Caveat",cursive}
+.heatmap-frame,.screener-frame{border-radius:3px}
+.end-note{background:var(--panel);border:1px dashed var(--border);padding:21px}
+.end-symbol{color:var(--papercoral)}
+.footer{background:var(--panel2);border-top:1px solid var(--border);color:var(--muted)}
+.footer a{color:var(--accent)}
+.btn-primary,.outline-btn,.star-button,.icon-button{border-radius:5px}
+.radar-remove{opacity:1}
+@media(max-width:1120px){
+ .sidebar{padding-left:25px;padding-right:25px}
+ .main-content{padding-left:25px;padding-right:25px}
+ .hero.hero-v3{grid-template-columns:1fr .9fr}
+ .hero-left{padding:26px 28px 22px}
+ .hero.hero-v3 h1{font-size:clamp(43px,5vw,65px)}
+ .notebook-sheet{width:100%;padding:17px}
+ .sticky-note{right:9px;bottom:17px}
+ .quick-track-v3 .quick-track-title{min-width:130px;padding:12px}
+ .quick-track-v3 .quick-ticker{padding:10px}
+}
+@media(max-width:800px){
+ .sidebar{gap:8px;padding:12px 19px}
+ .nav-link{padding:8px 9px}
+ .nav-link svg{display:none}
+ .hero.hero-v3{grid-template-columns:1fr}
+ .hero-left{min-height:435px;padding:24px 34px 23px}
+ .hero.hero-v3 h1{font-size:clamp(52px,9vw,79px)}
+ .hero-right{min-height:450px;border-left:0;border-top:1px solid var(--border)}
+ .notebook-sheet{max-width:550px;width:85%}
+ .quick-track-v3{overflow-x:auto;scroll-snap-type:x proximity}
+ .quick-track-v3 .quick-track-title{position:sticky;left:0;z-index:3;min-width:125px}
+ .quick-track-v3 .quick-ticker{min-width:115px;scroll-snap-align:start}
+}
+@media(max-width:590px){
+ .sidebar{flex-direction:column;align-items:stretch;gap:10px}
+ .brand{align-self:center}
+ .side-nav{margin:0;justify-content:space-around;gap:0}
+ .nav-link{padding:7px 8px;font-size:11px}
+ .topbar{padding:0 15px}
+ .page-subcrumb,.crumb-div{display:none}
+ .topbar-actions{gap:4px}
+ .ticker-label{padding:0 11px;font-size:8px}
+ .main-content{padding:17px 13px 45px}
+ .hero-left{padding:22px 22px 18px;min-height:422px}
+ .issue-line{font-size:8px}
+ .issue-line>span:last-child{display:none}
+ .eyebrow-hand{font-size:19px}
+ .hero.hero-v3 h1{font-size:clamp(43px,11.7vw,63px)}
+ .hero.hero-v3 p{font-size:12px}
+ .hero-v3-actions{gap:15px}
+ .hero-right{padding:40px 23px 36px;min-height:425px}
+ .notebook-sheet{width:100%}
+ .sticky-note{font-size:20px;padding:10px 13px;right:7px;bottom:22px}
+ .quick-track-v3 .quick-track-title{min-width:115px}
+ .section{margin-top:35px}
+ .section-head h2{font-size:clamp(23px,6vw,32px)}
+ .note-workspace-heading{flex-wrap:wrap}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
 </style>
   <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-ticker-tape.js"></script>
   <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-mini-chart.js"></script>
@@ -291,7 +489,7 @@ const STOCKS = [
   ['VGT','Vanguard Information Technology ETF','AMEX'],['XLK','Technology Select Sector SPDR','AMEX'],
   ['XLE','Energy Select Sector SPDR','AMEX'],['ITA','iShares U.S. Aerospace & Defense ETF','AMEX'],
 ];
-const LS = {watch:'pulselayer-watchlist-v1',theme:'pulselayer-theme-v1',key:'pulselayer-finnhub-token-v1'};
+const LS = {watch:'pulselayer-watchlist-v1',theme:'tickdraft-theme-v1',key:'pulselayer-finnhub-token-v1'};
 const $ = (id) => document.getElementById(id);
 function loadLocal(key, fallback) { try { return localStorage.getItem(key) ?? fallback; } catch { return fallback; } }
 function saveLocal(key,value) { try { localStorage.setItem(key,value); return true; } catch {return false;} }
@@ -301,7 +499,7 @@ function symbolData(ticker, exchange) {let item=STOCKS.find(s=>s[0]===ticker);re
 function tvSymbol(symbol){return symbol.exchange ? `${symbol.exchange}:${symbol.ticker}`:symbol.ticker;}
 let watchlist;try {const w=JSON.parse(loadLocal(LS.watch,'null'));watchlist=Array.isArray(w)?[...new Set(w.map(safeTicker).filter(Boolean))].slice(0,40):['NVDA','AAPL','GOOGL','MSFT','TSLA','SPY'];}catch {watchlist=['NVDA','AAPL','GOOGL','MSFT','TSLA','SPY'];}
 let selected=symbolData('NVDA');
-let theme=loadLocal(LS.theme,'dark')==='light'?'light':'dark';
+let theme=loadLocal(LS.theme,'light')==='dark'?'dark':'light';
 let apiKey=loadLocal(LS.key,'');
 let quoteMap=new Map();
 let quoteRequestCounter=0;
@@ -341,7 +539,7 @@ function renderSelectedQuote(){
     const cls=delta>0?'up':delta<0?'down':'';if(cls){price.classList.add(cls);change.classList.add(cls);} }
   else {price.textContent=apiKey?'Awaiting quote…':'Explore the chart';change.textContent=apiKey?'Provider price tiles refresh every 30 seconds':'Add personal data token for custom price tiles';}
 }
-function chooseTicker(ticker,exchange){ticker=safeTicker(ticker);if(!ticker)return;selected=symbolData(ticker,exchange);if($('orbitFocus'))$('orbitFocus').textContent=ticker;document.querySelectorAll('.orbit-node').forEach(node=>node.classList.toggle('selected',node.dataset.ticker===ticker));document.querySelectorAll('.quick-ticker').forEach(node=>node.classList.toggle('selected',node.dataset.ticker===ticker));let full=tvSymbol(selected);$('selectedTicker').textContent=ticker;$('selectedCompany').textContent=selected.company;$('selectedExchange').textContent=(selected.exchange||'AUTO')+' · U.S. SYMBOL';$('selectedEmblem').textContent=ticker[0];$('advancedChart').setAttribute('symbol',full);$('technicalAnalysis').setAttribute('symbol',full);renderSelectedQuote();renderWatch();closeSearch();closeNavigation();document.getElementById('workspace').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});let url=new URL(location.href);url.searchParams.set('ticker',ticker);if(selected.exchange)url.searchParams.set('exchange',selected.exchange);else url.searchParams.delete('exchange');history.replaceState(null,'',url);if(apiKey)fetchQuotes();}
+function chooseTicker(ticker,exchange){ticker=safeTicker(ticker);if(!ticker)return;selected=symbolData(ticker,exchange);showNote();if($('orbitFocus'))$('orbitFocus').textContent=ticker;document.querySelectorAll('.orbit-node').forEach(node=>node.classList.toggle('selected',node.dataset.ticker===ticker));document.querySelectorAll('.quick-ticker').forEach(node=>node.classList.toggle('selected',node.dataset.ticker===ticker));let full=tvSymbol(selected);$('selectedTicker').textContent=ticker;$('selectedCompany').textContent=selected.company;$('selectedExchange').textContent=(selected.exchange||'AUTO')+' · U.S. SYMBOL';$('selectedEmblem').textContent=ticker[0];$('advancedChart').setAttribute('symbol',full);$('technicalAnalysis').setAttribute('symbol',full);renderSelectedQuote();renderWatch();closeSearch();closeNavigation();document.getElementById('workspace').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});let url=new URL(location.href);url.searchParams.set('ticker',ticker);if(selected.exchange)url.searchParams.set('exchange',selected.exchange);else url.searchParams.delete('exchange');history.replaceState(null,'',url);if(apiKey)fetchQuotes();}
 function updateClock(){const now=new Date();$('nyClock').textContent='NEW YORK · '+new Intl.DateTimeFormat('en-US',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'America/New_York'}).format(now)+' ET';}
 function listSearchResults(){const query=safeTicker($('stockSearch').value);const matching=STOCKS.filter(s=>!query||s[0].includes(query)||s[1].toUpperCase().includes(query)).slice(0,9);searchItems=matching;$('searchResults').replaceChildren();
   if(query&&!matching.some(s=>s[0]===query)) {searchItems.unshift([query,`Search ${query} as a custom ticker`,$('exchangeSelect').value]);}
@@ -371,8 +569,16 @@ async function fetchQuotes(){
 function initMovers(){
   const host=$('moversWidget'),wrapper=document.createElement('div');wrapper.className='tradingview-widget-container';const target=document.createElement('div');target.className='tradingview-widget-container__widget';wrapper.appendChild(target);const script=document.createElement('script');script.async=true;script.src='https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js';script.text=JSON.stringify({colorTheme:theme,dateRange:'1D',exchange:'US',showChart:true,locale:'en',largeChartUrl:'',isTransparent:true,showSymbolLogo:true,showFloatingTooltip:true,width:'100%',height:'100%',plotLineColorGrowing:'rgba(74,218,173,1)',plotLineColorFalling:'rgba(255,129,124,1)',gridLineColor:'rgba(104,115,131,.12)',scaleFontColor:'rgba(130,145,165,1)',belowLineFillColorGrowing:'rgba(74,218,173,.12)',belowLineFillColorFalling:'rgba(255,129,124,.12)'});wrapper.appendChild(script);host.replaceChildren(wrapper);
 }
+
+const NOTE_STORAGE='tickdraft-stock-notes-v1';
+function getNotes(){try{const saved=JSON.parse(loadLocal(NOTE_STORAGE,'{}'));return saved&&typeof saved==='object'&&!Array.isArray(saved)?saved:{};}catch{return {};}}
+function showNote(){const field=$('tickerNote');if(!field)return;field.value=getNotes()[selected.ticker]||'';$('noteTicker').textContent=selected.ticker;$('noteSaved').textContent='Saved on this device as you type.';}
+function persistNote(){const text=$('tickerNote').value,notes=getNotes();if(text.trim())notes[selected.ticker]=text;else delete notes[selected.ticker];saveLocal(NOTE_STORAGE,JSON.stringify(notes));$('noteSaved').textContent='Saved locally ✓';}
+
 function bind(){
   setTheme(theme);updateClock();setInterval(updateClock,30_000);renderWatch();renderSelectedQuote();initMovers();updateProviderStatus();
+  $('tickerNote').addEventListener('input',persistNote);
+  showNote();
   $('themeToggle').addEventListener('click',()=>setTheme(theme==='dark'?'light':'dark'));
   $('settingsTheme').addEventListener('click',()=>{setTheme(theme==='dark'?'light':'dark');toast(`Switched to ${theme} theme.`);});
   [$('heroSearch'),$('addStockButton'),$('sidebarAdd')].forEach(b=>b.addEventListener('click',openSearch));
@@ -391,7 +597,7 @@ function bind(){
   $('favoriteSelected').addEventListener('click',()=>watchlist.includes(selected.ticker)?removeWatch(selected.ticker):addWatch(selected.ticker));
   document.querySelectorAll('.intervals button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.intervals button').forEach(b=>b.classList.toggle('active',b===btn));$('advancedChart').setAttribute('interval',btn.dataset.interval);}));
   document.querySelectorAll('.benchmark-card').forEach(btn=>btn.addEventListener('click',()=>chooseTicker(btn.dataset.ticker)));
-  document.querySelectorAll('.orbit-node,.quick-ticker').forEach(btn=>btn.addEventListener('click',()=>chooseTicker(btn.dataset.ticker)));
+  document.querySelectorAll('.quick-ticker,.paper-tickers button').forEach(btn=>btn.addEventListener('click',()=>chooseTicker(btn.dataset.ticker)));
   $('openExternalChart').addEventListener('click',()=>window.open(`https://www.tradingview.com/chart/?symbol=${encodeURIComponent(tvSymbol(selected))}`,'_blank','noopener,noreferrer'));
   $('saveApiKey').addEventListener('click',()=>{const value=$('finnhubKey').value.trim();if(!value){toast('Enter a token or use Remove.');return;}apiKey=value;saveLocal(LS.key,value);quoteRequestCounter++;quoteMap.clear();updateProviderStatus();renderSelectedQuote();toast('Personal quote token saved in this browser.');fetchQuotes();});
   $('clearApiKey').addEventListener('click',()=>{apiKey='';removeLocal(LS.key);$('finnhubKey').value='';quoteRequestCounter++;quoteMap.clear();updateProviderStatus();renderWatch();renderSelectedQuote();toast('Local token removed.');});
@@ -427,25 +633,25 @@ document.addEventListener('DOMContentLoaded',bind);
   </svg>
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
-      <a class="brand" href="#overview" aria-label="PulseLayer homepage">
+      <a class="brand" href="#overview" aria-label="Tickdraft homepage">
         <span class="brand-mark"><span></span><span></span><span></span></span>
-        <span class="brand-word">pulse<span>layer</span><small>MARKET OBSERVATORY <b> / </b> 01</small></span>
+        <span class="brand-word">tick<span>draft</span><small>THE MARKET NOTEBOOK <b> / </b> 01</small></span>
       </a>
       <div class="side-section-label">WORKSPACE <span>001</span></div>
       <nav class="side-nav" aria-label="Main navigation">
-        <a href="#overview" class="nav-link active" data-section="overview"><svg class="icon"><use href="#ic-grid"/></svg><span>Overview</span><span class="nav-shortcut">01</span></a>
-        <a href="#workspace" class="nav-link" data-section="workspace"><svg class="icon"><use href="#ic-chart"/></svg><span>Chart studio</span><span class="nav-shortcut">02</span></a>
-        <a href="#heatmap" class="nav-link" data-section="heatmap"><svg class="icon"><use href="#ic-heat"/></svg><span>Market heatmap</span><span class="nav-shortcut">03</span></a>
-        <a href="#explore" class="nav-link" data-section="explore"><svg class="icon"><use href="#ic-layers"/></svg><span>Market explorer</span><span class="nav-shortcut">04</span></a>
+        <a href="#overview" class="nav-link active" data-section="overview"><svg class="icon"><use href="#ic-grid"/></svg><span>Home</span><span class="nav-shortcut">01</span></a>
+        <a href="#workspace" class="nav-link" data-section="workspace"><svg class="icon"><use href="#ic-chart"/></svg><span>Charts</span><span class="nav-shortcut">02</span></a>
+        <a href="#heatmap" class="nav-link" data-section="heatmap"><svg class="icon"><use href="#ic-heat"/></svg><span>Heatmap</span><span class="nav-shortcut">03</span></a>
+        <a href="#explore" class="nav-link" data-section="explore"><svg class="icon"><use href="#ic-layers"/></svg><span>Explore</span><span class="nav-shortcut">04</span></a>
       </nav>
-      <div class="side-section-label watch-label">YOUR LIST <span>PRIVATE</span></div>
+      <div class="side-section-label watch-label">SAVED TICKERS <span>LOCAL</span></div>
       <div class="side-watchlist" id="sidebarWatchlist" aria-label="Saved stocks"></div>
       <button class="side-add" id="sidebarAdd"><svg class="icon"><use href="#ic-plus"/></svg>Add a ticker</button>
       <div class="sidebar-bottom">
         <div class="signal-decoration" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
         <p class="bottom-kicker">STAY IN THE KNOW</p>
-        <p class="bottom-copy">One signal.<br>A million stories.</p>
-        <button class="sidebar-settings" id="sideSettings"><svg class="icon"><use href="#ic-settings"/></svg>Data & preferences <svg class="icon arrow"><use href="#ic-arrow"/></svg></button>
+        <p class="bottom-copy">One ticker.<br>One new thought.</p>
+        <button class="sidebar-settings" id="sideSettings"><svg class="icon"><use href="#ic-settings"/></svg>Settings <svg class="icon arrow"><use href="#ic-arrow"/></svg></button>
       </div>
     </aside>
 
@@ -459,51 +665,58 @@ document.addEventListener('DOMContentLoaded',bind);
         </div>
       </header>
 
-      <div class="ticker-strip"><span class="ticker-label"><span class="live-dot"></span>THE WIRE</span><div class="ticker-widget"><tv-ticker-tape symbols="NASDAQ:NVDA,NASDAQ:AAPL,NASDAQ:MSFT,NASDAQ:GOOGL,NASDAQ:AMZN,NASDAQ:TSLA,AMEX:SPY,NASDAQ:QQQ,NYSE:BRK.B" theme="dark" direction="horizontal"></tv-ticker-tape></div></div>
+      <div class="ticker-strip"><span class="ticker-label"><span class="live-dot"></span>STOCK TICKER</span><div class="ticker-widget"><tv-ticker-tape symbols="NASDAQ:NVDA,NASDAQ:AAPL,NASDAQ:MSFT,NASDAQ:GOOGL,NASDAQ:AMZN,NASDAQ:TSLA,AMEX:SPY,NASDAQ:QQQ,NYSE:BRK.B" theme="dark" direction="horizontal"></tv-ticker-tape></div></div>
 
       <main class="main-content">
 
-        <header class="hero hero-v2" id="marketObservatory">
-          <div class="editorial-hero">
-            <div class="hero-edition"><span class="edition-mark">✳</span> PULSELAYER / MARKET OBSERVATORY <span class="edition-num">EDITION 002 — BUILT FOR THE CURIOUS</span></div>
-            <div class="hero-headline">
-              <h1>The market<br>has a <em>pulse.</em><span class="headline-asterisk" aria-hidden="true">✳</span></h1>
-              <p>Don't just watch a price. Find the pattern behind it. Your own window into U.S. equities, beautifully arranged and ready to explore.</p>
+        
+        <section class="hero hero-v3" aria-labelledby="heroTitle">
+          <div class="hero-left">
+            <div class="issue-line"><span class="paper-dot"></span> A SMALL PROJECT FOR CURIOUS INVESTORS <span>EST. 2026</span></div>
+            <div class="hero-copy">
+              <div class="eyebrow-hand">a little less Wall Street, a little more you ✳</div>
+              <h1 id="heroTitle">Stocks make<br><em>more sense</em> when<br>you explore.</h1>
+              <p>Charts, market moves, and a place to keep your own thoughts. No hype, no complicated dashboards. Just the stock market, one ticker at a time.</p>
+              <div class="hero-v3-actions"><button class="btn-primary" id="heroSearch"><svg class="icon"><use href="#ic-search"/></svg> Find a stock <svg class="icon"><use href="#ic-arrow"/></svg></button><a href="#workspace" class="notebook-link">or jump into the charts ↗</a></div>
             </div>
-            <div class="hero-bottomline">
-              <button class="btn-primary" id="heroSearch"><svg class="icon"><use href="#ic-search"/></svg> FIND A STOCK <span class="keycap">/</span></button>
-              <a class="text-link" href="#workspace">ENTER THE THE PRICE ROOM <svg class="icon"><use href="#ic-arrow"/></svg></a>
-            </div>
-            <div class="hero-microcopy"><span><i class="tiny-pulse"></i> EXCHANGE DATA MAY BE DELAYED</span><span>RESEARCH FIRST. REACT SECOND.</span></div>
+            <div class="hero-foot"><span>✦ MADE TO EXPLORE, NOT TO PREDICT</span><span>DATA MAY BE DELAYED</span></div>
           </div>
-          <div class="observatory-card">
-            <div class="observatory-top"><div><span class="obs-index">FIG. 001</span><strong>THE SIGNAL FIELD</strong></div><span class="obs-type">INTERACTIVE / SELECT A NODE</span></div>
-            <div class="orbit-scene" aria-label="Interactive stock constellation: choose a ticker to open its chart">
-              <div class="orbit-ring orbit-ring-one" aria-hidden="true"></div><div class="orbit-ring orbit-ring-two" aria-hidden="true"></div><div class="orbit-ring orbit-ring-three" aria-hidden="true"></div>
-              <div class="orbit-axis axis-horizontal" aria-hidden="true"></div><div class="orbit-axis axis-vertical" aria-hidden="true"></div>
-              <div class="central-target"><span>YOUR FOCUS</span><strong id="orbitFocus">NVDA</strong><i></i><small>MARKET / ON YOUR TERMS</small></div>
-              <button class="orbit-node selected" data-ticker="NVDA" style="--nx:20%;--ny:25%" aria-label="Explore NVIDIA stock">NVDA <span>01</span></button>
-              <button class="orbit-node" data-ticker="GOOGL" style="--nx:74%;--ny:18%" aria-label="Explore Alphabet stock">GOOGL <span>02</span></button>
-              <button class="orbit-node" data-ticker="AAPL" style="--nx:87%;--ny:55%" aria-label="Explore Apple stock">AAPL <span>03</span></button>
-              <button class="orbit-node" data-ticker="TSLA" style="--nx:68%;--ny:83%" aria-label="Explore Tesla stock">TSLA <span>04</span></button>
-              <button class="orbit-node" data-ticker="SPY" style="--nx:26%;--ny:77%" aria-label="Explore S&P 500 ETF">SPY <span>05</span></button>
-              <button class="orbit-node" data-ticker="XLE" style="--nx:10%;--ny:52%" aria-label="Explore Energy ETF">XLE <span>06</span></button>
-              <div class="scene-coordinate coord-tl">40° 42' N</div><div class="scene-coordinate coord-br">NASDAQ / NYSE</div>
+          <div class="hero-right">
+            <div class="paper-decoration" aria-hidden="true">✻</div>
+            <div class="notebook-sheet">
+              <div class="notebook-top"><span>MY MARKET SCRATCHPAD</span><span class="handstamp">vol. 01</span></div>
+              <div class="notebook-graph" aria-hidden="true">
+                <svg viewBox="0 0 460 175" preserveAspectRatio="none" role="img">
+                  <path d="M0 145H460M0 102H460M0 58H460M55 0V175M155 0V175M255 0V175M355 0V175" stroke="#dedbd2" stroke-width="1" stroke-dasharray="4 7" fill="none"/>
+                  <path d="M5 136L56 121L99 132L152 93L195 105L246 66L293 87L345 42L397 54L455 12" stroke="#34866a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  <circle cx="345" cy="42" r="7" stroke="#fffdf8" stroke-width="4" fill="#34866a"/>
+                  <path d="M359 23L383 9" stroke="#ed7d55" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="chart-sticker">NOT A PRICE CHART — JUST A DOODLE</span>
+              </div>
+              <div class="scrap-title">What's on your radar?</div>
+              <div class="paper-tickers">
+                <button data-ticker="NVDA"><span class="paper-bullet green"></span> NVDA <small>AI</small></button>
+                <button data-ticker="GOOGL"><span class="paper-bullet coral"></span> GOOGL <small>TECH</small></button>
+                <button data-ticker="SPY"><span class="paper-bullet green"></span> SPY <small>S&P 500</small></button>
+                <button data-ticker="XLE"><span class="paper-bullet coral"></span> XLE <small>ENERGY</small></button>
+              </div>
+              <div class="handwriting">pick one, see where it goes ↗</div>
             </div>
-            <div class="observatory-bottom"><span><span class="tiny-pulse"></span> ORBIT IS A NAVIGATION MAP, NOT A PERFORMANCE GRAPH</span><span>06 POINTS</span></div>
+            <div class="sticky-note">research<br>before<br>reacting. <span>✳</span></div>
+            <div class="hero-byline">THE STOCK MARKET, IN YOUR OWN WORDS.</div>
           </div>
-        </header>
-        <div class="quick-track" aria-label="Quick stock navigation">
-          <div class="quick-track-title"><span>DIRECT FREQUENCIES</span><small>EXPLORE ↗</small></div>
-          <button class="quick-ticker" data-ticker="NVDA"><span>01</span><strong>NVDA</strong><i>AI & CHIPS</i><b>↗</b></button>
-          <button class="quick-ticker" data-ticker="AAPL"><span>02</span><strong>AAPL</strong><i>TECH</i><b>↗</b></button>
-          <button class="quick-ticker" data-ticker="GOOGL"><span>03</span><strong>GOOGL</strong><i>INTERNET</i><b>↗</b></button>
-          <button class="quick-ticker" data-ticker="SPY"><span>04</span><strong>SPY</strong><i>MARKET ETF</i><b>↗</b></button>
-          <button class="quick-ticker" data-ticker="XLE"><span>05</span><strong>XLE</strong><i>ENERGY ETF</i><b>↗</b></button>
+        </section>
+        <div class="quick-track quick-track-v3" aria-label="Stock shortcuts">
+          <div class="quick-track-title"><span>QUICK PICKS</span><small>START HERE →</small></div>
+          <button class="quick-ticker" data-ticker="NVDA"><span>01</span><strong>NVDA</strong><i>NVIDIA</i><b>↗</b></button>
+          <button class="quick-ticker" data-ticker="AAPL"><span>02</span><strong>AAPL</strong><i>APPLE</i><b>↗</b></button>
+          <button class="quick-ticker" data-ticker="GOOGL"><span>03</span><strong>GOOGL</strong><i>ALPHABET</i><b>↗</b></button>
+          <button class="quick-ticker" data-ticker="SPY"><span>04</span><strong>SPY</strong><i>S&P 500 ETF</i><b>↗</b></button>
+          <button class="quick-ticker" data-ticker="XLE"><span>05</span><strong>XLE</strong><i>ENERGY</i><b>↗</b></button>
         </div>
-
-        <section class="section" aria-labelledby="marketPulseTitle">
-          <div class="section-head"><div><div class="section-kicker">01 <span>—</span> MARKET PULSE</div><h2 id="marketPulseTitle">Four windows <span class="subtle">into the market.</span></h2></div><div class="note-pill"><span class="small-dot"></span>Quotes may be delayed</div></div>
+<section class="section" aria-labelledby="marketPulseTitle">
+          <div class="section-head"><div><div class="section-kicker">01 <span>—</span> MARKET PULSE</div><h2 id="marketPulseTitle">The market <span class="subtle">in four snapshots.</span></h2></div><div class="note-pill"><span class="small-dot"></span>Quotes may be delayed</div></div>
           <div class="benchmark-grid">
             <button class="benchmark-card" data-ticker="SPY" aria-label="View S&P 500 ETF chart"><div class="bench-heading"><span>01 / S&P 500 ETF</span><span class="mini-arrow">↗</span></div><tv-mini-chart symbol="AMEX:SPY" theme="dark"></tv-mini-chart></button>
             <button class="benchmark-card" data-ticker="QQQ" aria-label="View Nasdaq 100 ETF chart"><div class="bench-heading"><span>02 / NASDAQ 100 ETF</span><span class="mini-arrow">↗</span></div><tv-mini-chart symbol="NASDAQ:QQQ" theme="dark"></tv-mini-chart></button>
@@ -513,7 +726,7 @@ document.addEventListener('DOMContentLoaded',bind);
         </section>
 
         <section class="section chart-section" id="workspace" aria-labelledby="chartTitle">
-          <div class="section-head"><div><div class="section-kicker">02 <span>—</span> CHART STUDIO</div><h2 id="chartTitle">Follow the <span class="subtle">price story.</span></h2></div><button class="outline-btn" id="openExternalChart"><svg class="icon"><use href="#ic-external"/></svg> Full screen chart</button></div>
+          <div class="section-head"><div><div class="section-kicker">02 <span>—</span> CHART STUDIO</div><h2 id="chartTitle">The chart <span class="subtle">corner.</span></h2></div><button class="outline-btn" id="openExternalChart"><svg class="icon"><use href="#ic-external"/></svg> Full screen chart</button></div>
           <div class="workspace-grid">
             <div class="chart-panel panel">
               <div class="chart-topline"><div class="symbol-heading"><div class="symbol-emblem" id="selectedEmblem">N</div><div><span class="selected-company" id="selectedCompany">NVIDIA Corporation</span><div class="symbol-line"><strong id="selectedTicker">NVDA</strong><span class="selected-exchange" id="selectedExchange">NASDAQ · EQUITY</span></div></div></div><div class="quote-area"><div id="selectedPrice" class="quote-price">Explore the chart</div><div id="selectedChange" class="quote-change">Connect a data feed for custom price tiles</div></div></div>
@@ -522,30 +735,38 @@ document.addEventListener('DOMContentLoaded',bind);
               <div class="chart-footer"><span><span class="tiny-pulse"></span> Interactive chart · TradingView</span><span>Available data and delay vary by exchange</span></div>
             </div>
             <aside class="radar-panel panel" aria-labelledby="radarTitle">
-              <div class="panel-heading"><div><span class="panel-kicker">PERSONAL RADAR / 01</span><h3 id="radarTitle">Your watchlist<span class="accent-dot">.</span></h3></div><span class="counter-badge" id="watchCount">0</span></div>
-              <div class="radar-description">The companies you care about, all in one place.</div>
+              <div class="panel-heading"><div><span class="panel-kicker">YOUR LITTLE WATCHLIST</span><h3 id="radarTitle">Saved stocks<span class="accent-dot">.</span></h3></div><span class="counter-badge" id="watchCount">0</span></div>
+              <div class="radar-description">Your own collection of stocks to keep checking in on.</div>
               <div id="radarList" class="radar-list"></div>
               <button id="addStockButton" class="radar-add"><svg class="icon"><use href="#ic-plus"/></svg>Add another stock <span>↗</span></button>
-              <div class="radar-tip"><div class="radar-tip-icon">✦</div><div><strong>Your list, your view.</strong><p>Saved on this device. Select a ticker to load its chart instantly.</p></div></div>
-            </aside>
+              <div class="radar-tip"><div class="radar-tip-icon">✎</div><div><strong>Your picks, your pace.</strong><p>Saved in this browser. There’s no account needed.</p></div></div>
+            
+              <div class="note-workspace">
+                <div class="note-workspace-heading"><span>↳ YOUR OWN NOTES</span><small>PRIVATE TO THIS BROWSER</small></div>
+                <div class="note-title">What do you think of <strong id="noteTicker">NVDA</strong>?</div>
+                <label for="tickerNote" class="note-prompt">Reasons to follow it, questions to research, ideas to come back to...</label>
+                <textarea id="tickerNote" rows="4" maxlength="1400" placeholder="I'm watching this one because..."></textarea>
+                <div class="note-status"><span id="noteSaved">Your note saves as you type.</span><span>✎</span></div>
+              </div>
+</aside>
           </div>
         </section>
 
         <section class="section section-heat" id="heatmap" aria-labelledby="heatmapTitle">
-          <div class="section-head"><div><div class="section-kicker">03 <span>—</span> THE BIGGER PICTURE</div><h2 id="heatmapTitle">The market, <span class="subtle">unfiltered.</span></h2></div><div class="legend"><span><i class="legend-green"></i> Up</span><span><i class="legend-red"></i> Down</span><span><i class="legend-neutral"></i> Flat</span></div></div>
+          <div class="section-head"><div><div class="section-kicker">03 <span>—</span> THE BIGGER PICTURE</div><h2 id="heatmapTitle">A bird’s-eye <span class="subtle">view.</span></h2></div><div class="legend"><span><i class="legend-green"></i> Up</span><span><i class="legend-red"></i> Down</span><span><i class="legend-neutral"></i> Flat</span></div></div>
           <div class="heatmap-layout"><div class="heatmap-panel panel"><div class="heatmap-header"><div><span class="panel-kicker">S&P 500 / SECTOR MAP</span><h3>Where is the market moving?</h3></div><span class="heatmap-helper">SIZE = MARKET CAP</span></div><div class="heatmap-frame"><tv-heatmap heatmap-type="stock" data-source="SPX500" grouping="sector" block-size="market_cap_basic" block-color="change" theme="dark"></tv-heatmap></div><div class="panel-footer">Each block represents a company. Green is positive daily performance; red is negative. Data may be delayed.</div></div></div>
         </section>
 
         <section class="section" id="explore" aria-labelledby="exploreTitle">
-          <div class="section-head"><div><div class="section-kicker">04 <span>—</span> DISCOVERY ENGINE</div><h2 id="exploreTitle">Movement <span class="subtle">under the microscope.</span></h2></div><span class="note-pill">U.S. EQUITIES</span></div>
+          <div class="section-head"><div><div class="section-kicker">04 <span>—</span> DISCOVERY ENGINE</div><h2 id="exploreTitle">What’s <span class="subtle">moving today?</span></h2></div><span class="note-pill">U.S. EQUITIES</span></div>
           <div class="discover-grid"><div class="movers-panel panel"><div class="panel-heading"><div><span class="panel-kicker">MARKET LEADERS</span><h3>What's moving today?</h3></div><span class="small-live"><span class="tiny-pulse"></span> MARKET FEED</span></div><div class="embedded-movers" id="moversWidget"><div class="embed-placeholder">Loading market leaders…</div></div></div><div class="analysis-panel panel"><div class="panel-heading"><div><span class="panel-kicker">TECHNICAL PERSPECTIVE</span><h3>Signal lens <span class="accent-dot">✳</span></h3></div></div><p class="analysis-desc">See technical indicator summaries for the stock you're investigating. Signals aren't predictions.</p><div class="technical-widget"><tv-technical-analysis id="technicalAnalysis" symbol="NASDAQ:NVDA" theme="dark"></tv-technical-analysis></div><div class="analysis-disclaimer">Derived from market indicators, not investment recommendations.</div></div></div>
         </section>
 
-        <section class="section screener-section" aria-labelledby="screenerTitle"><div class="section-head"><div><div class="section-kicker">05 <span>—</span> DEEP DISCOVERY</div><h2 id="screenerTitle">Your next <span class="subtle">rabbit hole.</span></h2></div><span class="note-pill">SORT & FILTER</span></div><div class="screener-panel panel"><div class="screener-intro"><div><h3>U.S. equity screener</h3><p>Filter the market by price, movement, sector, valuation and more.</p></div><span class="screener-ornament">▦</span></div><div class="screener-frame"><tv-screener id="tvScreener" screener-type="stock" market="america" theme="dark"></tv-screener></div></div></section>
+        <section class="section screener-section" aria-labelledby="screenerTitle"><div class="section-head"><div><div class="section-kicker">05 <span>—</span> DEEP DISCOVERY</div><h2 id="screenerTitle">Find your <span class="subtle">next idea.</span></h2></div><span class="note-pill">SORT & FILTER</span></div><div class="screener-panel panel"><div class="screener-intro"><div><h3>U.S. equity screener</h3><p>Filter the market by price, movement, sector, valuation and more.</p></div><span class="screener-ornament">▦</span></div><div class="screener-frame"><tv-screener id="tvScreener" screener-type="stock" market="america" theme="dark"></tv-screener></div></div></section>
 
-        <div class="end-note"><div class="end-symbol">✳</div><div><strong>Keep your perspective.</strong><p>Markets move. Curiosity compounds. Data, not hype.</p></div><a href="#overview">BACK TO TOP ↑</a></div>
+        <div class="end-note"><div class="end-symbol">✳</div><div><strong>The idea is simple.</strong><p>A simple place to learn, one chart at a time.</p></div><a href="#overview">BACK TO TOP ↑</a></div>
       </main>
-      <footer class="footer"><span>© <span id="year">2026</span> PULSELAYER MARKET OBSERVATORY</span><span>CHARTS & MARKET DATA POWERED BY <a target="_blank" rel="noopener noreferrer" href="https://www.tradingview.com/">TRADINGVIEW</a></span><span>EDUCATION ONLY · NOT FINANCIAL ADVICE</span></footer>
+      <footer class="footer"><span>© <span id="year">2026</span> TICKDRAFT MARKET OBSERVATORY</span><span>CHARTS & MARKET DATA POWERED BY <a target="_blank" rel="noopener noreferrer" href="https://www.tradingview.com/">TRADINGVIEW</a></span><span>EDUCATION ONLY · NOT FINANCIAL ADVICE</span></footer>
     </div>
   </div>
 

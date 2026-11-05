@@ -1,19 +1,19 @@
-# PulseLayer · Market Observatory
+# Tickdraft — The Market Notebook
 
-A custom-built U.S. stock market research dashboard, published at https://sohan660.github.io/ .
+A student-style passion project for exploring the U.S. stock market without the noise.
 
-## Features
+**Live website:** https://sohan660.github.io/
 
-- Interactive market constellation: click a ticker to open its chart
-- TradingView-powered interactive charts, indices, sector heatmap, movers, technical analysis and market screener
-- Private browser-only watchlist and ticker search
-- Optional user-supplied Finnhub quotes in the browser
-- Responsive mobile layout and dark/light color themes
+## What's inside
+- A fully custom, mobile-friendly notebook interface (hand-drawn-inspired accents and paper textures)
+- TradingView-powered interactive charts, ticker tape, S&P sector heatmap, stock screener, and market movers
+- Stock search with preset tickers and custom symbols
+- Local watchlist, saved on your browser
+- Per-ticker research notes, saved automatically in your browser
+- Optional Finnhub quote tiles with your own personal key
+- Light/dark appearance toggle
 
-## Data notice
+## Important
+This is a static personal research website. Stock quotes and embedded charts are supplied by third parties and can be delayed. The hand-drawn line in the hero is an **illustration, not stock data**. Research notes and watchlists are stored locally on your device and are not synchronized between browsers. Optional personal API tokens should not be shared in a publicly deployed production frontend. No brokerage account access or trading feature is included.
 
-Embedded market data may be delayed depending on source and exchange. The decorative constellation shows ticker selection **not** live price movements. No live price values are fabricated. The optional quote integration is a personal browser-side feature; production-grade data feeds require a secure backend and properly licensed market-data access. Not financial advice.
-
-## Maintenance
-
-This is a static self-contained `index.html` site. GitHub Pages serves the `main` branch from the repository root. `.nojekyll` allows direct static serving.
+Built as a single, editable \`index.html\` file and hosted on GitHub Pages.
